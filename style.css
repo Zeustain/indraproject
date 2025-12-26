@@ -1,0 +1,260 @@
+/* --- 1. SETUP & VARIABLES --- */
+:root {
+    --primary: #354F52; /* Sage Green Gelap */
+    --secondary: #FAF9F6; /* Cream/Putih Tulang */
+    --accent: #C18F59; /* Gold/Terracotta */
+    --text-dark: #2F3E46;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--secondary);
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary); }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- 2. NAVBAR (RESPONSIVE) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(250, 249, 246, 0.98);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.btn-cta {
+    background-color: var(--accent);
+    color: white !important;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.btn-cta:hover { background-color: var(--primary); }
+
+/* Tombol Marketplace */
+.btn-marketplace {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.btn-marketplace:hover {
+    background-color: transparent;
+    color: var(--primary) !important;
+}
+
+/* --- 3. HERO CAROUSEL --- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin-top: 60px;
+    overflow: hidden;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide.active { opacity: 1; }
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+.slide-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+}
+.slide-content h1 {
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.slider-controls {
+    position: absolute;
+    top: 50%; width: 100%;
+    display: flex; justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.slider-btn {
+    background: rgba(255,255,255,0.2);
+    border: none; color: white;
+    font-size: 1.5rem; cursor: pointer;
+    padding: 10px 15px; border-radius: 50%;
+}
+
+/* --- 4. GENERAL SECTIONS --- */
+section { padding: 4rem 5%; }
+.section-title { text-align: center; margin-bottom: 3rem; }
+.section-title h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+/* Grid Layouts */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.card {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* --- 5. PAGE SPECIFIC --- */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted var(--primary);
+    padding: 1rem 0;
+}
+.note-badge {
+    display: inline-block;
+    background: var(--secondary);
+    padding: 5px 10px;
+    border: 1px solid var(--accent);
+    font-size: 0.8rem;
+    margin: 3px;
+    color: var(--primary);
+}
+.booking-form {
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.blibli-link {
+    font-weight: bold; font-size: 1.1rem; 
+    color: #0095DA; text-decoration: underline;
+    display: block; margin-top: 10px;
+}
+
+/* --- 6. FOOTER (UPDATED UNTUK VERSI LENGKAP) --- */
+footer {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 3rem 5% 1rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+/* Style Judul Footer (Emas/Accent) */
+.footer-column h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.bottom-bar {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* Tombol Floating WA (Dikembalikan) */
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 2000;
+}
+
+/* --- 7. MEDIA QUERIES --- */
+@media screen and (max-width: 768px) {
+    .hamburger { display: block; }
+    
+    .nav-links {
+        position: absolute;
+        top: 60px; right: 0;
+        height: calc(100vh - 60px);
+        background: var(--secondary);
+        flex-direction: column;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { transform: translateX(0%); }
+    .slide-content h1 { font-size: 2rem; }
+    .hero-slider { height: 60vh; }
+    section { padding: 3rem 1.5rem; }
+    .floating-wa { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+}

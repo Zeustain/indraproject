@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brew - Coffeeshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">INDRAPROJECT.</a></div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coffee.html" style="color:var(--accent)">Coffee</a></li>
+            <li><a href="parfume.html">Parfume</a></li>
+            <li><a href="bodycare.html">Bodycare</a></li>
+            <li><a href="villa.html">Stay</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-slider">
+        <div class="slide active"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Coffee 1"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee 2"></div>
+        <div class="slider-controls"><button class="slider-btn prev">&#10094;</button><button class="slider-btn next">&#10095;</button></div>
+    </header>
+
+    <section>
+        <div class="section-title">
+            <h2>Signature Menu</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="menu-item">
+                <div><h3>Caramel Macchiato Gold</h3><p>Espresso, Vanilla, Caramel</p></div>
+                <h3>Rp 45.000</h3>
+            </div>
+            <div class="menu-item">
+                <div><h3>Sage Matcha Latte</h3><p>Pure Matcha, Oatmilk</p></div>
+                <h3>Rp 48.000</h3>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn-cta" onclick="alert('Mengarahkan ke GoFood...')">Order via GoFood</button>
+        </div>
+    </section>
+
+    <footer><div class="bottom-bar">&copy; 2024 LuxeLife Hub</div></footer>
+    <script src="script.js"></script>
+</body>
+</html>
